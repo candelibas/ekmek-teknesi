@@ -1,0 +1,58 @@
+/*
+*   ---- Ekmek Teknesi Veresiye Defteri App ----
+*
+* @author Can Delibas <candelibas00@gmail.com>
+* 
+* @blog candelibas.wordpress.com
+* @git  github.com/candelibas
+* 
+*/
+
+$(function(){
+
+// add customer
+
+var values = $("#form").serialize();
+
+$.ajax({
+    url:"musteril.php?musteri_ekle=1",
+    dataType : "text",
+    type: "POST",
+    data: values,
+    success:function(result){
+    
+    
+    }
+    
+
+});
+
+
+
+// first of all check if browser supports webkitSpeechRecognition API
+if (!('webkitSpeechRecognition' in window)) 
+{
+  console.log("Your browser doesn't support Web Speech API!Please install the latest version of Google Chrome");
+} 
+else // then fire!
+{ 
+
+  // let's create the object
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = false; // we want to end process when user stop for talking. NOTE: default value is "FALSE" 
+  recognition.interimResults = true; // providing feedback. NOTE: default value is "FALSE"
+  recognition.lang = "tr-TR"; // user will talk Turkish so the language is "tr-TR"
+
+  recognition.onstart = function() { 
+    // animate the microphone graphic
+
+  
+  }
+  //recognition.onresult = function(event) { ... }
+  //recognition.onerror = function(event) { ... }
+  //recognition.onend = function() { ... }
+  
+}
+
+
+});
