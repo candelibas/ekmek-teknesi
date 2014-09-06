@@ -1,10 +1,7 @@
 <?php include "header.php"; ?>
  
         <div data-role="content">
-        
 
-
-        
         <?php
         
         // view customer
